@@ -111,8 +111,11 @@
 			let firstRun = true;
 
 			function run(code = document.querySelector('#editor').value) {
-				if (firstRun) firstRun = false;
-				else print('----------------------------------------------------------------------');
+				// Remove Console Ouput for a clean console!
+				document.querySelector('#logs').textContent = '';
+				// Clean Console or Have Previous Output there?
+				// if (firstRun) firstRun = false;
+				// else print('----------------------------------------------------------------------');
 				try {
 					const interpreter = new Interpreter(code, 'runtime');
 					interpreter.eval();
